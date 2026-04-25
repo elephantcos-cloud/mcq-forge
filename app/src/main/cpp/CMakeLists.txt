@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.1)
+project("mcqforge_native")
+add_library(mcqforge_native SHARED tokenizer_jni.cpp tokenizer_core.cpp)
+find_library(log-lib log)
+target_include_directories(mcqforge_native PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(mcqforge_native ${log-lib})
